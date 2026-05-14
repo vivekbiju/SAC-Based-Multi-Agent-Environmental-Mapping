@@ -1,9 +1,3 @@
-To transform your MSc Robotics thesis into a professional AI Engineer portfolio piece, your **README.md** needs to balance academic rigor with production-level software engineering standards.
-
-Below is a structured template for your GitHub repository.
-
----
-
 # Multi-Agent Path Planning for Environmental Monitoring using SAC
 
 This repository implements a decentralized, autonomous path-planning system for a fleet of mobile agents designed to monitor complex environmental variables (e.g., water quality in lakes or pollution in ports). The system utilizes **Soft Actor-Critic (SAC)**, a state-of-the-art Deep Reinforcement Learning algorithm, to maximize area coverage and locate high-value "peaks" within the environment while autonomously avoiding obstacles.
