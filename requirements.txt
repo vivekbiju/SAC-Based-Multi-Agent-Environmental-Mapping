@@ -1,0 +1,8 @@
+torch
+numpy
+gymnasium
+scipy
+scikit-learn
+matplotlib
+easydict
+tensorboard

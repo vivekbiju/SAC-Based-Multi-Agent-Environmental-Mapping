@@ -1,0 +1,13 @@
+# Python environment
+venv/
+__pycache__/
+*.pyc
+
+# Data and logs (Keep these local)
+data/*.csv
+runs_tuning/
+evaluation_plots/
+*.pth
+
+# IDE settings
+.vscode/
