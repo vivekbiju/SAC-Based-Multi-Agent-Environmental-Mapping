@@ -73,17 +73,3 @@ The system periodically evaluates the agent's performance by comparing the Groun
 * **Reconstruction Accuracy**: Measured via $R^2$ score and Mean Absolute Error (MAE) during deterministic evaluation episodes.
 * **Coverage Efficiency**: Tracks the percentage of unique traversable cells visited per time step.
 
-## 🎓 Thesis Context
-
-This project was developed as part of an **MSc Robotics Thesis**. It addresses the challenge of deploying autonomous robotic fleets in unknown environments where communication and sensing resources are limited.
-
----
-
-### **For your CV (AI Engineer Role in the UK)**
-
-When adding this to your resume, emphasize the following points:
-
-* **System Design**: "Developed a modular Multi-Agent Reinforcement Learning (MARL) framework in PyTorch/Gymnasium."
-* **Analysis**: "Utilized TensorBoard for diagnostic tracking of Actor-Critic convergence and Optuna for Bayesian hyperparameter optimization."
-* **Software Quality**: "Transitioned academic research code into a scalable, package-based repository with automated evaluation pipelines."
-
