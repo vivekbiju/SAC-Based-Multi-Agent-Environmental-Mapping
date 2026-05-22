@@ -1,3 +1,9 @@
+
+APP LINK= https://sac-based-multi-agent-environmental-mapping-mbabtcut9gtxn2vkgx.streamlit.app/
+
+<img width="1827" height="779" alt="image" src="https://github.com/user-attachments/assets/ac032544-f740-4254-8a5a-d969b809504a" />
+
+
 # Multi-Agent Path Planning for Environmental Monitoring using SAC
 
 This repository implements a decentralized, autonomous path-planning system for a fleet of mobile agents designed to monitor complex environmental variables (e.g., water quality in lakes or pollution in ports). The system utilizes **Soft Actor-Critic (SAC)**, a state-of-the-art Deep Reinforcement Learning algorithm, to maximize area coverage and locate high-value "peaks" within the environment while autonomously avoiding obstacles.
