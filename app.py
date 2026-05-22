@@ -6,12 +6,8 @@ import os
 import time
 from easydict import EasyDict as edict
 from scipy.interpolate import LinearNDInterpolator
-import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Now your original imports will work perfectly on Streamlit Cloud
-from src.environment import MultiAgentMonitoring
-from src.agent import SACAgent
+
 # Core directory module imports
 from src.environment import MultiAgentMonitoring
 from src.agent import SACAgent
