@@ -1,30 +1,15 @@
+# Multi-Agent Path Planning for Environmental Monitoring using SAC
 
-APP LINK=
+This repository implements a decentralized, autonomous path-planning system for a fleet of mobile agents designed to monitor complex environmental variables (e.g., water quality in lakes or pollution in ports). The system utilizes **Soft Actor-Critic (SAC)**, a state-of-the-art Deep Reinforcement Learning algorithm, to maximize area coverage and locate high-value "peaks" within the environment while autonomously avoiding obstacles.
 
+## 🛠️ Key Features
 
-# 3-Path-Planning: Multi-Agent Deep Reinforcement Learning for Adaptive Environmental Monitoring
+* **Custom Gymnasium Environment**: A multi-agent simulation framework that supports real-world map data (CSV) with configurable agent sensing and movement physics.
+* **Deep Reinforcement Learning**: Implementation of SAC with **Twin Q-Learning** and **Automatic Entropy Tuning** to ensure stable learning and continuous exploration.
+* **Map Reconstruction & Evaluation**: Integrates `LinearNDInterpolator` to reconstruct full environmental maps from sparse agent observations, allowing for quantitative performance tracking via **MAE** and **$R^2$** metrics.
+* **Modular Architecture**: Refactored from research code into a clean, production-ready directory structure following PEP 8 standards.
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
-[![Framework-Gymnasium](https://img.shields.io/badge/Environment-Gymnasium-green.svg)](https://gymnasium.farama.org/)
-[![Engine-PyTorch](https://img.shields.io/badge/Deep%20Learning-PyTorch-ee4c2c.svg)](https://pytorch.org/)
-[![UI-Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B.svg)](https://streamlit.io/)
-
-An end-to-end Multi-Agent Reinforcement Learning (MARL) framework and interactive web application designed for autonomous spatial exploration, adaptive monitoring, and real-time environmental reconstruction. Featuring a custom continuous-action Gymnasium environment paired with a modular Soft Actor-Critic (SAC) implementation, the system optimizes path planning for a team of autonomous agents tasked with sampling and reconstructively mapping dynamic geographic regions (such as Ypacarai Lake and Acoruna Port).
-
----
-
-## 🚀 Key Features
-
-* **Multi-Agent Continuous Control:** Decentralized decision-making utilizing a Gaussian Policy architecture mapping continuous 2D step velocities.
-* **Custom Spatial Gymnasium Environment:** Simulates multi-agent traversal on real-world GIS array structures featuring collision handling, obstacle masking, and path-visitation penalties.
-* **Soft Actor-Critic (SAC) Core:** Fully implemented from scratch using a double Q-network configuration, target network soft updates, and entropy-regularized policy sampling via the reparameterization trick.
-* **Interactive Streamlit Dashboard:** A high-performance dashboard that orchestrates autonomous missions, dynamically extracts GIS CSV matrix dimensions, loads model checkpoints, and showcases live telemetry.
-* **On-the-Fly Spatial Interpolation:** Features an evaluation pipeline leveraging `scipy`'s N-dimensional linear interpolation to reconstruct environmental maps from sparse, agent-collected runtime metrics.
-* **Production Telemetry:** Integrates TensorBoard logging alongside automated programmatic rendering pipelines to visualize model evaluation maps (`matplotlib`) against actual ground truth datasets.
-
----
-
-## 📁 Repository Structure
+##  Project Structure
 
 ```text
 3-PATH-PLANING/
@@ -99,24 +84,9 @@ pip install -r requirements.txt
 
 ```
 
+### 2. Training the Fleet
 
-
----
-
-## 🏃 Running the Framework
-
-### Launching the Interactive Web UI Dashboard
-
-To spin up the web interface for real-time inference rendering:
-
-```bash
-streamlit run app.py
-
-```
-
-### Launching the Headless Backend Training Loop
-
-To train the neural networks from scratch via terminal execution:
+Start the training process with the default configuration. This will log rewards and network loss to TensorBoard:
 
 ```bash
 python -m src.main
@@ -128,7 +98,16 @@ python -m src.main
 To monitor network loss convergences and tracking metrics live, point TensorBoard to your active log folder:
 
 ```bash
-tensorboard --logdir=runs_tuning/sac_experiment
+tensorboard --logdir runs_tuning
 
 ```
+
+## 📊 Results and Visualization
+
+The system periodically evaluates the agent's performance by comparing the Ground Truth map against the reconstructed map sampled by the agents.
+
+### Quantitative Performance
+
+* **Reconstruction Accuracy**: Measured via $R^2$ score and Mean Absolute Error (MAE) during deterministic evaluation episodes.
+* **Coverage Efficiency**: Tracks the percentage of unique traversable cells visited per time step.
 
